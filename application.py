@@ -21,8 +21,8 @@ class Storage():
       passwd = '',
       db     = 'test',
       host   = os.getenv('MYSQL_PORT_3306_TCP_ADDR'),
-      port   = int(os.getenv('MYSQL_PORT_3306_TCP_PORT')
-      )
+      port   = int(os.getenv('MYSQL_PORT_3306_TCP_PORT'))
+    )
 
     cur = self.db.cursor()
     cur.execute("DROP TABLE IF EXISTS scores")
