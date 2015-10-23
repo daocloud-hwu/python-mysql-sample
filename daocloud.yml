@@ -5,9 +5,7 @@ services:
 
 script:
   - pip install -r requirements.txt
-  - mkdir -p daocloud/testresults
-  - mkdir -p daocloud/codecoverage
-  - nosetests test.py --with-xunit --xunit-file=daocloud/testresults/nosetests.xml
+  - nosetests test.py --with-xunit --xunit-file=${TEST_DIR}/result.xml
   - which python && coverage run --branch test.py
-  - which python && coverage xml -o daocloud/codecoverage/coverage.xml test.py
+  - which python && coverage xml -o ${TEST_DIR}/coverage.xml test.py
 
